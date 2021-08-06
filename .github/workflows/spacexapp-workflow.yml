@@ -19,7 +19,6 @@ jobs:
 
       - name: Install Gatsby Library
         run: npm install -g gatsby-cli
-
       
 
       - name: Install Node Modules
