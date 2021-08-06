@@ -6,18 +6,17 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout the Code
-        uses: actions/checkout@v2
-        
-      - name: Install and Configure Node.JS
+      - name: Install and Configure Node.js
         uses: actions/setup-node@v2
         with:
           node-version: "12"
-      
-      - name: Verify the Node.JS Version
+      - name: Verify Weather Node is Installed or Not
         run: node --version
-      
-      - name: Install Node Modules
+        
+      - name: Checkout the Code
+        uses: actions/checkout@v2
+       
+      - name: Install the Libraries or Node Modules
         run: npm install
 
       - name: Install Gatsby Library
@@ -25,11 +24,13 @@ jobs:
         
       - name: List the files in current directory
         run: ls ${{github.workspace}}
-
       
 
       - name: Build the Spacex Application using Gatsby
         run: gatsby build
+      
+      - name: List the files available
+        run: ls
 
       - name: Archive the Build Folder i.e public folder
         uses: actions/upload-artifacts@v2
