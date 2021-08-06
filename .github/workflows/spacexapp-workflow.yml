@@ -27,6 +27,13 @@ jobs:
       
       - name: Verify build
         run: ls -la public
+        
+      - name: Archive the Build Folder i.e public folder
+        uses: actions/upload-artifacts@v2
+        with:
+          name: spacexpublicfolder
+          path: ./public/
+        if: always()
 
   deployment:
     runs-on: ubuntu-latest
