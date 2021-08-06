@@ -53,7 +53,7 @@ jobs:
       - name: Install Surge
         run: npm install -g surge
         
-      - name: login 
+     
       
 
       - name: Deploying the Application using Surge
