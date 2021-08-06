@@ -32,7 +32,7 @@ jobs:
         uses: actions/upload-artifacts@v2.3.1
         with:
           name: spacexpublicfolder
-          path: ./public/
+          path: public
         if: always()
 
   deployment:
